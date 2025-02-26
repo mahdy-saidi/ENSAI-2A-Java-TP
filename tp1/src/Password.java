@@ -41,7 +41,14 @@ public class Password {
     public static String bruteForce6Digit(String targetHash) {
 
         // Code here
-
+        for (int i = 0; i <= 999999; i++) {
+            // Format the number to always have 6 digits (padding with leading zeros if
+            // necessary)
+            String number = String.format("%06d", i);
+            if (hashPassword(number).equals(targetHash)) {
+                return number; // Stop the loop if the number is found
+            }
+        }
         return null;
     }
 
