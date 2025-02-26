@@ -104,8 +104,13 @@ public class Password {
     public static HashMap<String, Boolean> checkPasswordsList(ArrayList<String> passwords) {
 
         // Code here
+        HashMap<String, Boolean> results = new HashMap<>();
 
-        return null;
+        for (String password : passwords) {
+            results.put(password, isStrongPassword(password));
+        }
+
+        return results;
     }
 
     /**
