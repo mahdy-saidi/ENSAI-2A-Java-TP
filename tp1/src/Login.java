@@ -6,12 +6,33 @@ import java.util.Scanner;
 
 public class Login {
     public static void main(String[] args) {
-        HashMap<String, String> userDatabase = loadUserDatabase("../data/user_hashpwd.csv");
+        HashMap<String, String> userDatabase = loadUserDatabase("tp1/data/user_hashpwd.csv");
         Scanner scanner = new Scanner(System.in);
 
         while (true) {
 
             // Code here
+            System.out.print("Enter username: ");
+            String username = scanner.nextLine();
+            if (userDatabase.containsKey(username)) {
+                int attempts = 3;
+                while (attempts > 0) {
+                    System.out.print("Enter password: ");
+                    String password = scanner.nextLine();
+                    String hashed_password = Password.hashPassword(password);
+                    if (userDatabase.get(username).equals(hashed_password)) {
+                        System.out.println("✅ Login successful!");
+                        scanner.close();
+                        return;
+                    } else {
+                        attempts--;
+                        System.out.println("❌ Incorrect password. Attempts left: " + attempts);
+                    }
+                }
+                System.out.println("Too many failed attempts. Restarting username input...\n");
+            } else {
+                System.out.println("❌ Username not found. Try again.\n");
+            }
         }
     }
 
