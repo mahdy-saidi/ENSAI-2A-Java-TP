@@ -1,28 +1,23 @@
 package fr.ensai.library;
 
 import java.util.Objects;
+import java.util.Random;
 
 /**
  * Represents an Author.
  */
-public class Author {
+public class Author extends Person {
+    public Author(String name) {
+        super(name, generateRandomAge(), "Unknown"); // super() must be the first statement
+    }
 
-    // Attributes
-    private String name;
-    private int age;
-    private String nationality;
-
-    /**
-     * Constructs a new Book object.
-     */
-    public Author(String name, int age, String nationality) {
-        this.name = name;
-        this.age = age;
-        this.nationality = nationality;
+    // Static method to generate a random age
+    private static int generateRandomAge() {
+        return new Random().nextInt(80 - 12 + 1) + 12;
     }
 
     public String getName() {
-        return this.name;
+        return super.getName();
     }
 
     /**
@@ -37,12 +32,12 @@ public class Author {
             return false;
 
         Author author = (Author) obj;
-        return Objects.equals(name, author.name);
+        return Objects.equals(super.getName(), author.getName());
     }
 
     @Override
     public String toString() {
-        return "Author " + name;
+        return "Author " + super.getName();
     }
 
 }
