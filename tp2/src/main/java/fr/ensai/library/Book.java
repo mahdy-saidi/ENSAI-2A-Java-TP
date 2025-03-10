@@ -24,9 +24,4 @@ public class Book extends Item {
         return author;
     }
 
-    @Override
-    public String toString() {
-        return "Book " + super.getTitle() + " written by " + author.toString();
-    }
-
 }

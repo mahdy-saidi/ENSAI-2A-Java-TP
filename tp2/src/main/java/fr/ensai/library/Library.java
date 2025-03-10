@@ -26,7 +26,7 @@ public class Library {
     }
 
     // Method to display all books in the library
-    public void displayBooks() {
+    public void displayItems() {
         if (items.isEmpty()) {
             System.out.println("No books in the library.");
         } else {
