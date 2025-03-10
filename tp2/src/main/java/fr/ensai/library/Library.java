@@ -12,11 +12,15 @@ import java.util.Map;
 public class Library {
     private String name;
     private List<Item> items;
+    private List<Loan> activeLoans;
+    private List<Loan> completedLoans;
 
     // Constructor
     public Library(String name) {
         this.name = name;
-        this.items = new ArrayList<>();
+        this.activeLoans = new ArrayList<>();
+        this.completedLoans = new ArrayList<>();
+
     }
 
 
