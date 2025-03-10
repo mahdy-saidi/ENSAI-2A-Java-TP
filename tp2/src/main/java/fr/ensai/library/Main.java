@@ -3,7 +3,16 @@ package fr.ensai.library;
 public class Main {
 
     public static void main(String[] args) {
+        // Create an instance of the Library
+        Library library = new Library("ENSAI Library");
 
+        // Load books from books.csv
+        library.loadBooksFromCSV("books.csv");
+
+        // Display all books
+        library.displayBooks();
+
+        // Example book creation
         Author tolkien = new Author("J.R.R. Tolkien", 81, "UK");
 
         Book fellowshipOfTheRing = new Book(

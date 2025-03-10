@@ -11,26 +11,27 @@ import java.util.Map;
 
 public class Library {
     private String name;
-    private List<Book> books;
+    private List<Item> items;
 
     // Constructor
     public Library(String name) {
         this.name = name;
-        this.books = new ArrayList<>();
+        this.items = new ArrayList<>();
     }
 
-    // Method to add a book to the library
-    public void addBook(Book book) {
-        books.add(book);
+
+     // Method to add a item to the library
+     public void addItem(Item item) {
+        items.add(item);
     }
 
     // Method to display all books in the library
     public void displayBooks() {
-        if (books.isEmpty()) {
+        if (items.isEmpty()) {
             System.out.println("No books in the library.");
         } else {
-            for (Book book : books) {
-                System.out.println(book);
+            for (Item item : items) {
+                System.out.println(item);
             }
         }
     }
@@ -70,7 +71,7 @@ public class Library {
                     }
                     Book book = new Book(isbn, title, author, year, pageCount);
 
-                    this.addBook(book);
+                    this.addItem(book);
                 }
             }
         } catch (

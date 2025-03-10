@@ -8,7 +8,7 @@ import java.util.Random;
  */
 public class Author extends Person {
     public Author(String name, int age, String nationality) {
-        super(name, age, nationality); // super() must be the first statement
+        super(name, age, nationality);
     }
 
     public Author(String name) {
