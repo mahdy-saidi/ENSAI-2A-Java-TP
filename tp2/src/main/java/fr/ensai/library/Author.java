@@ -7,8 +7,12 @@ import java.util.Random;
  * Represents an Author.
  */
 public class Author extends Person {
+    public Author(String name, int age, String nationality) {
+        super(name, age, nationality); // super() must be the first statement
+    }
+
     public Author(String name) {
-        super(name, generateRandomAge(), "Unknown"); // super() must be the first statement
+        this(name, generateRandomAge(), "Unknown");
     }
 
     // Static method to generate a random age
